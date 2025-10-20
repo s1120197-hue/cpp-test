@@ -1,15 +1,23 @@
 
 #include <iostream>
+using namespace std;
 
 int main() {
-    double celsius;    
-    double fahrenheit;   
+    int score1, score2, score3;
+    cout << "請輸入三科成績（以空格分隔）：";
+    cin >> score1 >> score2 >> score3;
 
-    std::cout << "請輸入華氏溫度!\n"; 
-    std::cin >> fahrenheit;    
+    double averageScore = (score1 + score2 + score3) / 3.0;
 
-    
-    celsius = (fahrenheit - 32) / 9 * 5; 
+    if (score1 < 40 || score2 < 40 || score3 < 40) {
+        cout << "不及格（有科目低於40分）\n";
+    } else if (averageScore >= 60) {
+        cout << "夠格\n";
+    } else {
+        cout << "不及格（平均未達60分）\n";
+    }
 
-    std::cout << "攝氏溫度為: " << celsius << " 度\n";
+    cout << "你的平均為: " << averageScore << endl;
+
     return 0;
+}
